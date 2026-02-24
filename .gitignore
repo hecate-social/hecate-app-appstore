@@ -1,7 +1,6 @@
 # Erlang/rebar3
 _build/
 _checkouts/
-rebar.lock
 erl_crash.dump
 *.beam
 

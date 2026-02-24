@@ -9,5 +9,5 @@ project(EventMap) ->
     AnnouncedAt = app_appstored_api_utils:get_field(announced_at, EventMap),
 
     Sql = "UPDATE plugin_catalog SET announced_at = ?2, "
-          "status = status | 2 WHERE license_id = ?1",
+          "status = status | 2, status_label = 'Announced' WHERE license_id = ?1",
     project_appstore_store:execute(Sql, [LicenseId, AnnouncedAt]).

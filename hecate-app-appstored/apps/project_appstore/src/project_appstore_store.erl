@@ -98,7 +98,6 @@ create_tables(Db) ->
             plugin_id          TEXT PRIMARY KEY,
             license_id         TEXT,
             name               TEXT,
-            org                TEXT,
             description        TEXT,
             icon               TEXT,
             github_repo        TEXT,

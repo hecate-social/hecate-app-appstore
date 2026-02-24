@@ -1,8 +1,8 @@
 %%% @doc API handler: GET /api/appstore/licenses
 %%%
-%%% Returns all active (non-revoked) licenses for the current user.
+%%% Returns all active (non-archived) licenses for the current user.
 %%% @end
--module(list_licenses_api).
+-module(get_licenses_page_api).
 
 -export([init/2, routes/0]).
 
@@ -40,5 +40,7 @@ handle_get(Req0, _State) ->
             end
     end.
 
+row_to_map(Row) when is_list(Row) ->
+    maps:from_list(lists:zip(?LICENSE_COLUMNS, Row));
 row_to_map(Row) when is_tuple(Row) ->
     maps:from_list(lists:zip(?LICENSE_COLUMNS, tuple_to_list(Row))).

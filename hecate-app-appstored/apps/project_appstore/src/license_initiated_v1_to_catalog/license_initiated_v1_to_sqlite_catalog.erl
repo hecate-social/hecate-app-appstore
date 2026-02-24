@@ -17,8 +17,8 @@ project(EventMap) ->
 
     Sql = "INSERT OR REPLACE INTO plugin_catalog "
           "(plugin_id, license_id, name, description, icon, github_repo, "
-          "oci_image, selling_formula, seller_id, status) "
-          "VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10)",
+          "oci_image, selling_formula, seller_id, status, status_label) "
+          "VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11)",
     Params = [PluginId, LicenseId, Name, Description, Icon, GithubRepo,
-              OciImage, SellingFormula, SellerId, 1],
+              OciImage, SellingFormula, SellerId, 1, <<"Initiated">>],
     project_appstore_store:execute(Sql, Params).
