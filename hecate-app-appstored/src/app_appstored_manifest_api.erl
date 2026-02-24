@@ -14,7 +14,7 @@ init(Req0, State) ->
                 <<"name">> => <<"appstore">>,
                 <<"version">> => list_to_binary(Vsn),
                 <<"icon">> => <<16#1F3EA/utf8>>,
-                <<"description">> => <<"Plugin Marketplace">>,
+                <<"description">> => <<"Plugin Appstore">>,
                 <<"tag">> => <<"appstore-studio">>
             }),
             Req1 = cowboy_req:reply(200, #{

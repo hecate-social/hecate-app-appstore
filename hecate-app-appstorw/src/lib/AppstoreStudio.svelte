@@ -84,7 +84,7 @@
 		try {
 			selectedPlugin = await api.get<PluginDetail>(`/api/appstore/plugin/${encodeURIComponent(pluginId)}`);
 		} catch (e) {
-			console.error('[marketplace] Failed to load plugin detail:', e);
+			console.error('[appstore] Failed to load plugin detail:', e);
 		} finally {
 			detailLoading = false;
 		}
@@ -109,7 +109,7 @@
 				await openDetail(item.plugin_id);
 			}
 		} catch (e) {
-			console.error('[marketplace] Buy license failed:', e);
+			console.error('[appstore] Buy license failed:', e);
 		} finally {
 			actionLoading = null;
 		}
@@ -130,7 +130,7 @@
 				await openDetail(item.plugin_id);
 			}
 		} catch (e) {
-			console.error('[marketplace] Install failed:', e);
+			console.error('[appstore] Install failed:', e);
 		} finally {
 			actionLoading = null;
 		}
@@ -148,7 +148,7 @@
 				await openDetail(item.plugin_id);
 			}
 		} catch (e) {
-			console.error('[marketplace] Remove failed:', e);
+			console.error('[appstore] Remove failed:', e);
 		} finally {
 			actionLoading = null;
 		}
@@ -188,7 +188,7 @@
 	<div class="border-b border-surface-600 bg-surface-800/50 px-4 py-3 shrink-0">
 		<div class="flex items-center gap-3">
 			<span class="text-xl">{'\u{1F3EA}'}</span>
-			<h1 class="text-sm font-semibold text-surface-100">Marketplace</h1>
+			<h1 class="text-sm font-semibold text-surface-100">Appstore</h1>
 
 			<!-- Connection status -->
 			<div class="flex items-center gap-1.5 text-[10px]">
@@ -254,7 +254,7 @@
 				<div class="flex items-center justify-center h-full">
 					<div class="text-center text-surface-400">
 						<div class="text-2xl mb-2 animate-pulse">{'\u{1F3EA}'}</div>
-						<div class="text-sm">Loading marketplace...</div>
+						<div class="text-sm">Loading appstore...</div>
 					</div>
 				</div>
 			{:else if error}
